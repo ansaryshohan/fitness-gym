@@ -66,6 +66,23 @@ body {
   font-weight: 400;
   color: var(--secondary-text-color);
 }
+@media screen and (max-width: 576px) {
+  .btn-primary {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+  .btn-outline {
+    padding: 5px 15px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .top-heading {
+    font-size: 32px;
+    line-height: 120%;
+  }
+}
 /* ===== Navbar section starts==== */
 nav {
   width: 100%;
@@ -228,6 +245,13 @@ nav .container {
   .hero-text {
     width: 100%;
   }
+  .hero-text h1 {
+    font-size: 40px;
+    line-height: 110%;
+  }
+  #miama-text {
+    font-size: 36px;
+  }
   .hero-image {
     width: 100%;
     justify-content: flex-start;
@@ -321,6 +345,12 @@ nav .container {
   .habit-card {
     width: 80%;
   }
+  .habit-card .card-title {
+    font-size: 24px;
+  }
+  .habit-card .card-desc {
+    font-size: 14px;
+  }
 }
 /* === change your habit section ends === */
 
@@ -350,7 +380,7 @@ nav .container {
   font-weight: 900;
   line-height: 110%;
   letter-spacing: 0%;
-  word-spacing: -5px;
+  word-spacing: 5px;
   margin: 0;
 }
 .extra-text-div .extra-text-desc {
@@ -375,11 +405,16 @@ nav .container {
   .run-extra-miles-section .container {
     display: flex;
     flex-direction: column;
-    padding: 20px 20px 20px 40px;
+    padding: 20px;
   }
   .extra-text-div {
     width: 95%;
     padding: 30px 0;
+  }
+  .extra-text-div .extra-text-title {
+    font-size: 32px;
+    line-height: 120%;
+    word-spacing: 6px;
   }
   .btn-div {
     width: 95%;
@@ -389,7 +424,7 @@ nav .container {
   }
   .extra-img-div {
     width: 95%;
-    padding: 10px;
+    padding: 0;
   }
 }
 /* === run extra miles section ends === */
@@ -527,19 +562,19 @@ nav .container {
 /* === Training and Exercises section ends === */
 
 /* ==== Moving text section starts ====== */
-.moving-text-section{
+.moving-text-section {
   padding: 100px 0 80px;
 }
 
-.moving-text-container{
+.moving-text-container {
   padding: 10px 0;
   white-space: nowrap;
   overflow-x: auto;
 }
-.moving-text-container::-webkit-scrollbar{
+.moving-text-container::-webkit-scrollbar {
   display: none;
 }
-.left-moving-content{
+.left-moving-content {
   white-space: nowrap;
   display: inline-block;
   animation-name: textMoveLeft;
@@ -549,18 +584,18 @@ nav .container {
   animation-direction: normal;
 }
 .left-moving-content h3,
-.right-moving-content h3{
+.right-moving-content h3 {
   display: inline-block;
   font-size: 96px;
   font-weight: 700;
   line-height: 106px;
 }
 .left-moving-content .moving-icon,
-.right-moving-content .moving-icon{
+.right-moving-content .moving-icon {
   margin: 10px 30px;
   display: inline-block;
 }
-.moving-icon i{
+.moving-icon i {
   color: goldenrod;
   font-size: 72px;
   animation-name: iconMoveClock;
@@ -569,7 +604,7 @@ nav .container {
   animation-direction: normal;
   animation-timing-function: linear;
 }
-.right-moving-content{
+.right-moving-content {
   white-space: nowrap;
   display: inline-block;
   animation-name: textMoveRight;
@@ -578,7 +613,7 @@ nav .container {
   animation-iteration-count: infinite;
   animation-direction: normal;
 }
-.right-moving-content .moving-icon i{
+.right-moving-content .moving-icon i {
   animation-name: iconMoveAntiClock;
   animation-duration: 8s;
   animation-iteration-count: infinite;
@@ -587,56 +622,56 @@ nav .container {
 }
 
 @keyframes textMoveLeft {
-  from{
+  from {
     transform: translateX(0);
   }
-  to{
+  to {
     transform: translate(-100%);
   }
 }
 
 @keyframes iconMoveClock {
-  from{
+  from {
     transform: rotate(0deg);
   }
-  to{
+  to {
     transform: rotate(360deg);
   }
 }
 @keyframes textMoveRight {
-  from{
+  from {
     transform: translateX(-200%);
   }
-  to{
+  to {
     transform: translate(0%);
   }
 }
 
 @keyframes iconMoveAntiClock {
-  from{
+  from {
     transform: rotate(360deg);
   }
-  to{
+  to {
     transform: rotate(0deg);
   }
 }
 
 /* === Media Query for Moving text section  === */
 @media screen and (max-width: 576px) {
-  .moving-text-section{
+  .moving-text-section {
     padding: 40px 0 5px;
   }
   .left-moving-content h3,
-.right-moving-content h3{
-  font-size: 36px;
-  line-height: 42px;
-}
-.left-moving-content .moving-icon,
-.right-moving-content .moving-icon{
-  margin: 10px 15px;
-  display: inline-block;
-}
-  .moving-icon i{
+  .right-moving-content h3 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .left-moving-content .moving-icon,
+  .right-moving-content .moving-icon {
+    margin: 10px 15px;
+    display: inline-block;
+  }
+  .moving-icon i {
     font-size: 24px;
   }
 }
@@ -725,18 +760,29 @@ select {
   color: var(--secondary-text-color);
   font-size: 18px;
 }
-option{
-  background-color: rgba(128, 128,128);
+option {
+  background-color: rgba(128, 128, 128);
   color: white;
 }
 .bmi-form .btn-primary {
   padding: 10px 60px;
 }
 @media screen and (max-width: 576px) {
+  .bmi-table-div .bmi-title,
+  .bmi-form-div .bmi-title {
+    font-size: 20px;
+  }
+  .bmi-form-div .bmi-subTitle {
+    font-size: 14px;
+  }
   .bmi-table-form-section {
     grid-template-columns: 1fr;
     row-gap: 20px;
   }
+  input[type="text"],
+select {
+  font-size: 14px;
+}
 }
 /* === Bmi calculator section ends === */
 
@@ -791,11 +837,11 @@ option{
   }
 }
 /* === meet our team section ends === */
-/* === blog section starts === */
-.blog-section{
+/* === latest news section starts === */
+.news-section {
   padding: 30px 0 100px;
 }
-.blog-section .heading-div{
+.news-section .heading-div {
   padding: 20px 0 80px;
 }
 .articles {
@@ -803,7 +849,7 @@ option{
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: 24px;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -815,7 +861,7 @@ article {
   position: relative;
   border-radius: 16px;
   box-shadow: none;
-  background:var(--gray-bg-color);
+  background: var(--gray-bg-color);
   transition: all 0.4s ease-in-out;
   overflow: hidden;
 }
@@ -862,7 +908,8 @@ article img {
 }
 article:has(:hover, :focus) {
   --img-scale: 1.1;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 @media screen and (max-width: 576px) {
@@ -892,13 +939,12 @@ article:has(:hover, :focus) {
     color: var(--title-color);
     transition: color 0.3s ease-out;
   }
-  .article-body a{
+  .article-body a {
     padding: 5px;
   }
 }
 
-/* === blog section ends === */
-
+/* === latest news section ends === */
 
 /* === footer section starts === */
 .footer-section {
