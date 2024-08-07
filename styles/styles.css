@@ -526,6 +526,122 @@ nav .container {
 }
 /* === Training and Exercises section ends === */
 
+/* ==== Moving text section starts ====== */
+.moving-text-section{
+  padding: 100px 0 80px;
+}
+
+.moving-text-container{
+  padding: 10px 0;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.moving-text-container::-webkit-scrollbar{
+  display: none;
+}
+.left-moving-content{
+  white-space: nowrap;
+  display: inline-block;
+  animation-name: textMoveLeft;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+.left-moving-content h3,
+.right-moving-content h3{
+  display: inline-block;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 106px;
+}
+.left-moving-content .moving-icon,
+.right-moving-content .moving-icon{
+  margin: 10px 30px;
+  display: inline-block;
+}
+.moving-icon i{
+  color: goldenrod;
+  font-size: 72px;
+  animation-name: iconMoveClock;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+.right-moving-content{
+  white-space: nowrap;
+  display: inline-block;
+  animation-name: textMoveRight;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+.right-moving-content .moving-icon i{
+  animation-name: iconMoveAntiClock;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+
+@keyframes textMoveLeft {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translate(-100%);
+  }
+}
+
+@keyframes iconMoveClock {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+@keyframes textMoveRight {
+  from{
+    transform: translateX(-200%);
+  }
+  to{
+    transform: translate(0%);
+  }
+}
+
+@keyframes iconMoveAntiClock {
+  from{
+    transform: rotate(360deg);
+  }
+  to{
+    transform: rotate(0deg);
+  }
+}
+
+/* === Media Query for Moving text section  === */
+@media screen and (max-width: 576px) {
+  .moving-text-section{
+    padding: 40px 0 5px;
+  }
+  .left-moving-content h3,
+.right-moving-content h3{
+  font-size: 36px;
+  line-height: 42px;
+}
+.left-moving-content .moving-icon,
+.right-moving-content .moving-icon{
+  margin: 10px 15px;
+  display: inline-block;
+}
+  .moving-icon i{
+    font-size: 24px;
+  }
+}
+/* ==== Moving text section ends ====== */
+
 /* === Bmi calculator section starts === */
 .bmi-calculation-section {
   background-color: rgb(0, 0, 0);
@@ -650,7 +766,7 @@ select {
 }
 .team-card {
   position: relative;
-  height: 310px;
+  /* height: 310px; */
   /* background-color: rgba(0, 0, 0, 0.126); */
 }
 .team-card img {
@@ -679,7 +795,7 @@ select {
 /* === meet our team section ends === */
 /* === footer section starts === */
 .footer-section {
-  padding: 20px 0;
+  padding: 80px 0 20px;
   background-color: var(--gray-bg-color);
 }
 .footer-section .container .upper-footer-section {
