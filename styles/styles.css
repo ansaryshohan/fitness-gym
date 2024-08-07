@@ -1,0 +1,753 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@font-face {
+  font-family: miama;
+  src: url("../assets/fonts/Miama.woff");
+}
+
+:root {
+  --hero-bg-color: linear-gradient(
+    180deg,
+    rgb(17, 17, 17),
+    rgba(119, 119, 119, 0) 100%
+  );
+  --gray-bg-color: rgb(34, 34, 34);
+  --btn-color: #e6533c;
+  --primary-text-color: rgb(255, 255, 255);
+  --secondary-text-color: rgba(255, 255, 255, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: var(--primary-text-color);
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+/* === common css styles=== */
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+.d-flex {
+  display: flex;
+}
+.btn-primary {
+  background-color: var(--btn-color);
+  padding: 15px 40px;
+  border-radius: 30px;
+  border: 1px solid var(--btn-color);
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid whitesmoke;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.top-heading {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--primary-text-color);
+}
+.top-subHeading {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--secondary-text-color);
+}
+/* ===== Navbar section starts==== */
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: var(--hero-bg-color);
+  z-index: 99;
+}
+nav .container {
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 10px 20px;
+  background: var(--hero-bg-color);
+}
+#logo {
+  color: var(--btn-color);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 120%;
+}
+.nav-menu {
+  width: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 39px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.nav-menu p {
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+.nav-menu .active {
+  background-color: var(--btn-color);
+}
+.nav-menu p a {
+  color: var(--primary-text-color);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-decoration: none;
+}
+.menu-icon {
+  display: none;
+}
+
+/*==== small device media query for nav===  */
+@media screen and (max-width: 576px) {
+  #logo {
+    font-size: 2.25rem;
+    line-height: 120%;
+  }
+  .nav-menu {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 120%;
+    color: var(--primary-text-color);
+  }
+}
+
+/* === Navbar section ends=== */
+
+/* === hero section starts=== */
+.banner-section {
+  padding-top: 100px;
+  background: var(--hero-bg-color);
+}
+.banner-section .container {
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.hero-text {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.hero-text h1 {
+  color: var(--primary-text-color);
+  font-size: 78px;
+  font-weight: 900;
+  line-height: 90%;
+  letter-spacing: 0%;
+  margin: 0;
+}
+.hero-text p {
+  color: var(--secondary-text-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  text-align: justify;
+}
+#miama-text {
+  font-family: miama;
+  font-size: 80px;
+  background-color: transparent;
+}
+.hero-image {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+}
+.hero-image img {
+  width: 80%;
+  /* object-fit: cover; */
+}
+.float-div {
+  padding: 20px 30px 20px 30px;
+  background-color: rgba(128, 128, 128, 0.192);
+  backdrop-filter: blur(20px);
+  position: absolute;
+  border-radius: 20px;
+}
+.float-div1 {
+  top: 20%;
+  right: 0;
+}
+.float-div2 {
+  bottom: 10%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.float-title {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 90%;
+  letter-spacing: 0%;
+  margin-bottom: 5px;
+}
+.float-desc {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--secondary-text-color);
+}
+.orange-ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--btn-color);
+}
+
+/* ==media query for hero section=== */
+@media screen and (max-width: 576px) {
+  .banner-section .container {
+    flex-direction: column;
+  }
+  .hero-text {
+    width: 100%;
+  }
+  .hero-image {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .float-div {
+    padding: 20px;
+  }
+  .float-div1 {
+    top: 10%;
+    right: 5%;
+  }
+  .float-div2 {
+    bottom: 10%;
+  }
+  .float-title {
+    font-size: 26px;
+  }
+  .float-desc {
+    font-size: 14px;
+  }
+  .orange-ball {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/*==== hero section ends=== */
+/* ==== change habit section starts ==== */
+.change-habit-section .container {
+  padding-bottom: 60px;
+}
+.heading-div {
+  padding: 40px 30px;
+}
+.heading-div .top-heading {
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+.heading-div .top-subHeading {
+  width: 60%;
+  margin: 0 auto 30px;
+}
+.habit-cards {
+  justify-content: space-between;
+  align-items: center;
+}
+.habit-card {
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.card-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(128, 128, 128, 0.297);
+  margin-bottom: 20px;
+}
+.card-img img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.habit-card .card-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  margin-bottom: 8px;
+}
+.habit-card .card-desc {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--secondary-text-color);
+}
+/* ==media query for change your habit section=== */
+@media screen and (max-width: 576px) {
+  .heading-div {
+    padding: 40px 0;
+  }
+  .heading-div .top-subHeading {
+    width: 90%;
+    padding: 0 10px;
+  }
+  .habit-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .habit-card {
+    width: 80%;
+  }
+}
+/* === change your habit section ends === */
+
+/* === run extra miles section starts === */
+.run-extra-miles-section {
+  padding: 40px 0;
+}
+.run-extra-miles-section .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--gray-bg-color);
+  border-radius: 40px;
+  padding: 20px 20px 20px 40px;
+}
+.extra-text-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+  width: 45%;
+}
+.extra-text-div .extra-text-title {
+  color: var(--primary-text-color);
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 110%;
+  letter-spacing: 0%;
+  word-spacing: -5px;
+  margin: 0;
+}
+.extra-text-div .extra-text-desc {
+  color: var(--secondary-text-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+.extra-img-div {
+  width: 50%;
+  padding: 20px;
+}
+.extra-img-div img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 30px;
+}
+/* ==media query for run extra miles section=== */
+@media screen and (max-width: 576px) {
+  .run-extra-miles-section .container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 40px;
+  }
+  .extra-text-div {
+    width: 95%;
+    padding: 30px 0;
+  }
+  .btn-div {
+    width: 95%;
+  }
+  .btn-div .btn-primary {
+    width: 100%;
+  }
+  .extra-img-div {
+    width: 95%;
+    padding: 10px;
+  }
+}
+/* === run extra miles section ends === */
+
+/* === Training and Exercises section starts === */
+.training-and-exercises-section {
+  padding: 40px 0;
+}
+.img-1 img,
+.img-2 img,
+.img-3 img,
+.img-4 img,
+.img-5 img,
+.img-6 img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+.img-1 {
+  grid-area: img1;
+  height: 200px;
+  position: relative;
+}
+.img-1-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(69, 191, 191, 0.415);
+}
+.img-2 {
+  grid-area: img2;
+  height: 200px;
+  position: relative;
+}
+.img-2-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(208, 48, 48, 0.415);
+}
+.img-3 {
+  grid-area: img3;
+  height: 200px;
+  position: relative;
+}
+.img-3-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(14, 14, 14, 0.834),
+    rgba(14, 14, 14, 0) 100%
+  );
+}
+.img-4 {
+  grid-area: img4;
+  height: 200px;
+  position: relative;
+}
+.img-4-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(14, 14, 14, 0.613),
+    rgba(14, 14, 14, 0.437) 100%
+  );
+}
+.img-5 {
+  grid-area: img5;
+  height: 200px;
+  position: relative;
+}
+.img-5-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(104, 157, 24, 0.344);
+}
+.img-6 {
+  grid-area: img6;
+  height: 200px;
+  position: relative;
+}
+.img-6-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(106, 154, 232, 0.42);
+}
+.training-row-1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "img1 img2 img2 img3";
+}
+.training-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr 1fr 1.4fr;
+  grid-template-areas: "img4 img4 img5 img6";
+}
+/* === Media Query for Training and Exercises section === */
+@media screen and (max-width: 576px) {
+  .img-3 {
+    display: none;
+  }
+  .img-6 {
+    display: none;
+  }
+  .training-row-1 {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-areas: "img1 img2";
+  }
+  .training-row-2 {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-areas: "img4 img5";
+  }
+}
+/* === Training and Exercises section ends === */
+
+/* === Bmi calculator section starts === */
+.bmi-calculation-section {
+  background-color: rgb(0, 0, 0);
+}
+.bmi-heading-div {
+  background-color: rgb(0, 0, 0);
+  padding: 10px 0 30px;
+}
+.bmi-main-content {
+  background-color: var(--gray-bg-color);
+  padding: 50px 0 50px;
+}
+.bmi-table-form-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 30px;
+}
+.bmi-table-div .bmi-title,
+.bmi-form-div .bmi-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: left;
+  color: var(--primary-text-color);
+  margin: 10px 0 60px;
+}
+.bmi-form-div .bmi-subTitle {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  color: var(--secondary-text-color);
+  margin: -40px 0 40px;
+  width: 75%;
+}
+.bmi-table-div table {
+  border-collapse: collapse;
+  border: 1px solid var(--secondary-text-color);
+  margin-bottom: 30px;
+}
+table td,
+table th {
+  border: 1px solid rgba(95, 93, 93, 0.522);
+  padding: 16px;
+  color: var(--secondary-text-color);
+  font-size: 16px;
+  font-weight: 400;
+}
+table th {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary-text-color);
+  text-align: left;
+}
+.bmi-form {
+  padding-bottom: 30px;
+}
+.form-row1,
+.form-row2,
+.form-row3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+.height-input,
+.weight-input,
+.age-input,
+.sex-input,
+.activity-input {
+  width: 100%;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 20px 20px;
+  background-color: rgba(128, 128, 128, 0.335);
+  border: none;
+  outline: rgba(128, 128, 128, 0.401);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+/* option{
+  background-color: rgba(128, 128, 128, 0.335);
+  color: var(--secondary-text-color);
+}
+.default{
+  color: rgba(128, 128, 128, 0.387);
+} */
+.bmi-form .btn-primary {
+  padding: 10px 60px;
+}
+@media screen and (max-width: 576px) {
+  .bmi-table-form-section {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}
+/* === Bmi calculator section ends === */
+
+/* === meet our team section starts === */
+.meet-our-team-section {
+  padding: 30px 0 60px;
+}
+.team-cards {
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.272);
+  backdrop-filter: blur(25px);
+  border-radius: 35px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.row-1,
+.row-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+.team-card {
+  position: relative;
+  height: 310px;
+  /* background-color: rgba(0, 0, 0, 0.126); */
+}
+.team-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  object-position: center;
+  filter: opacity(0.6);
+}
+.team-card-text {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  padding: 10px 0 10px 20px;
+}
+
+/* ==media query for meet our team section=== */
+@media screen and (max-width: 576px) {
+  .row-1,
+  .row-2 {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}
+/* === meet our team section ends === */
+/* === footer section starts === */
+.footer-section {
+  padding: 20px 0;
+  background-color: var(--gray-bg-color);
+}
+.footer-section .container .upper-footer-section {
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 1fr);
+  margin-bottom: 20px;
+}
+.footer-1,
+.footer-2,
+.footer-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 10px;
+}
+.footer-logo {
+  color: var(--btn-color);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 120%;
+}
+.footer-desc {
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 120%;
+  width: 75%;
+}
+.footer-title {
+  font-size: 30px;
+  font-weight: 700;
+}
+.footer-menu {
+  list-style: none;
+  padding-top: 20px;
+}
+.footer-menu li {
+  padding-bottom: 20px;
+  /* border: 1px solid red; */
+}
+.footer-menu li a {
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+.footer-section .container .hr {
+  width: 95%;
+  height: 1.3px;
+  margin: 15px auto;
+  background-color: var(--secondary-text-color);
+}
+.lower-footer-section {
+  text-align: center;
+  color: var(--secondary-text-color);
+  padding: 10px 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+/* ==media query footer section=== */
+@media screen and (max-width: 576px) {
+  .footer-section .container .upper-footer-section {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+  .footer-desc {
+    width: 85%;
+  }
+}
+/* === footer section ends === */
